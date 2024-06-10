@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    Inherited the sale.order.line tree view-->
+    <record id="stock_picking_inherit_view" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/button[@name='do_print_picking']" position="after">
+                    <button string="DDDDD" type="object" name="state_to_draft"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
